@@ -1,0 +1,131 @@
+/* Common styles for all buttons */
+.button {
+  font-size: 13px;
+  padding: 7px 30px;
+  text-decoration: none;
+  position: relative;
+  font-family: var(--ff-primary-reg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: var(--fs-light);
+  transition: 0.3s;
+  z-index: 1;
+}
+
+/* Normal variant */
+.button[data-variant="normal"] {
+  background-color: var(--btn-color);
+  color: var(--black-color);
+}
+
+.button[data-variant="normal"]:hover {
+  background-color: var(--btn-color);
+}
+
+/* Cut Hover variant */
+.button[data-variant="cutHover"] {
+  background-color: var(--dark-btn-color);
+  color: var(--black-color);
+}
+
+.button[data-variant="cutHover"]::before,
+.button[data-variant="cutHover"]::after {
+  content: "";
+  border-bottom: 80px solid var(--btn-color);
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: 0.5s;
+  width: 0;
+  z-index: -1;
+}
+
+.button[data-variant="cutHover"]::before {
+  left: 0;
+  right: -50px;
+  border-right: 50px solid transparent;
+  transform: translateX(-100%);
+}
+
+.button[data-variant="cutHover"]::after {
+  right: -98px;
+  border-left: 50px solid transparent;
+  transform: translateX(-100%);
+}
+
+.button[data-variant="cutHover"]:hover::before {
+  transform: translateX(-10%);
+  right: 0;
+  width: 100%;
+}
+
+.button[data-variant="cutHover"]:hover::after {
+  transform: translateX(19%);
+  right: 0;
+  width: 100%;
+}
+
+/* Cut Hover Bordered variant */
+.button[data-variant="cutHoverBordered"] {
+  background-color: transparent;
+  color: var(--btn-color);
+  border: 1px solid var(--btn-color);
+}
+
+.button[data-variant="cutHoverBordered"]::before,
+.button[data-variant="cutHoverBordered"]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-bottom: 80px solid var(--btn-color);
+  transition: 0.5s;
+  width: 0;
+  z-index: -1;
+}
+
+.button[data-variant="cutHoverBordered"]::before {
+  left: 0;
+  right: -50px;
+  border-right: 50px solid transparent;
+  transform: translateX(-100%);
+}
+
+.button[data-variant="cutHoverBordered"]::after {
+  right: -98px;
+  border-left: 50px solid transparent;
+  transform: translateX(-100%);
+}
+
+.button[data-variant="cutHoverBordered"]:hover::before {
+  transform: translateX(-10%);
+  right: 0;
+  width: 100%;
+}
+
+.button[data-variant="cutHoverBordered"]:hover {
+  color: var(--white-color);
+}
+
+.button[data-variant="cutHoverBordered"]:hover::after {
+  transform: translateX(19%);
+  right: 0;
+  width: 100%;
+}
+
+/* Bordered variant */
+.button[data-variant="bordered"] {
+  background-color: transparent;
+  color: var(--black-color);
+  border: 1px solid var(--btn-color);
+}
+.button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

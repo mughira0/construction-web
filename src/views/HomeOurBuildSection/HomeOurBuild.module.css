@@ -1,0 +1,148 @@
+.imagesMainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.homeBuildSection {
+  padding-block: 40px;
+}
+
+.imageDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 450px;
+  position: relative;
+}
+
+.imageDiv img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: contain;
+}
+.cardDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+}
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-inline-end: 10px;
+  font-size: 50px;
+}
+.left svg {
+  color: var(--secondary-color);
+  font-size: 32px;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.right h5 {
+  color: var(--gray-color);
+  font-size: 17px;
+  font-weight: bold;
+}
+.contentDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-block: 10px;
+  width: 100%;
+  height: 100%;
+}
+.right p {
+  color: var(--gray-color);
+  font-size: 14px;
+}
+.contentDiv > h4 {
+  color: var(--gray-color);
+  font-size: 32px;
+  margin: 0;
+  font-weight: bold;
+}
+.imagesMainDiv::before {
+  content: "23 Years of Experience!";
+  padding: 10px;
+  font-family: var(--ff-primary-bold);
+  position: absolute;
+  color: var(--black-color);
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 47px;
+  z-index: 3;
+  background-color: var(--secondary-color);
+}
+.contentDiv span {
+  color: var(--secondary-color) !important;
+  font-size: 32px;
+  margin: 0;
+  font-weight: bold;
+}
+.imagesMainDiv::after {
+  clip-path: polygon(63% 72%, 25% 72%, 44% 90%);
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background-color: var(--secondary-color);
+}
+.contentDiv > p {
+  color: var(--gray-color);
+  font-size: 14px;
+  margin: 0;
+}
+@media screen and (max-width: 991px) {
+  .contentDiv {
+    max-width: 600px;
+    padding-top: 60px;
+    margin-inline: auto;
+  }
+
+  .contentDiv * {
+    text-align: center;
+  }
+  .cardDiv {
+    max-width: 300px;
+
+    flex-direction: column;
+    margin-inline: auto;
+  }
+  .button {
+    margin-block: 40px 70px;
+  }
+}
+@media screen and (max-width: 517px) {
+  .imageDiv {
+    height: 300px;
+  }
+  .contentDiv {
+    padding-top: 20px;
+  }
+}

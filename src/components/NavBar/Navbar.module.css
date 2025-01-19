@@ -1,0 +1,99 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: var(--secondary-color); /* Semi-transparent navy */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  backdrop-filter: blur(10px); /* Background blur effect */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #007bff; /* Bright blue hover */
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu a {
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color); /* Bright blue underline */
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--main-color); /* Darker blue */
+}
+
+.menu a:hover::after {
+  width: 100%; /* Expand underline on hover */
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #2600ff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue */
+  transform: translateY(-3px); /* Slight lift */
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .button {
+    margin-top: 10px;
+  }
+  .logo {
+    display: none;
+  }
+}
+@media screen and (max-width: 558px) {
+  .button {
+    display: none;
+  }
+}
